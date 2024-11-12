@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div>
+    <table border="1">
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                No of Vehicles
+            </th>
+        </tr>
+        {% for item in prediction %}
+        <tr>
+            <td>{{ item.day }}</td>
+            <td>{{ item.hour }}</td>
+            <td>{{ item.data }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- <h1>Predicted Output : {{ prediction }}</h1> -->
+    <div class='bottom'>
+        <img src="/static/histo.png" class="top" alt="" />
+        <!-- <img src="/static/graphs.png"  class="top" alt="" /> -->
+    </div>
+</div>
+{% endblock%}
